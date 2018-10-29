@@ -10,3 +10,4 @@ class TaskTest < Minitest::Test
     assert task.completed?
   end
 end
+

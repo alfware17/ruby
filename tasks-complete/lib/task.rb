@@ -23,14 +23,14 @@ class Task
     "#{@text},#{@start_time},#{@end_time},#{@tag}\n"
   end
 
-  attr_reader :text, :tag
+  attr_reader :text, :start_time, :end_time
   
   def completed?
-    !@end_time.nil?
+    @end_time
   end
 
   def complete!
-    @end_time = Time.now
+    @end_time = Time.new
   end
 
   def duration
@@ -38,4 +38,14 @@ class Task
 
     (@end_time - @start_time).to_i
   end
+  
+  def druck
+    if completed?
+      status = "ERLEDIGT: "
+    else
+      status = "OFFEN: "
+    end
+    status + @text  
+  end
 end
+

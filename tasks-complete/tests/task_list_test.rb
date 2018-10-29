@@ -11,3 +11,4 @@ class TaskListTest < Minitest::Test
     assert_equal 1, @list.count
   end
 end
+
